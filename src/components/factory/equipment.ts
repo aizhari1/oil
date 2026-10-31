@@ -1,0 +1,225 @@
+export type DimStatus = "verified" | "approximate" | "assumed";
+
+export type EqItem = {
+  tag: string;
+  name: string;
+  service: string;
+  unit: string;
+  type: string;
+  diameter?: number;
+  height?: number;
+  volume?: number;
+  emptyWt?: number;
+  status: string;
+  dimStatus: DimStatus;
+  source: string;
+  notes?: string;
+  pos: [number, number, number];
+  kind: "settling" | "separator" | "tank" | "pit" | "effluent";
+};
+
+export const EQUIPMENT: EqItem[] = [
+  {
+    tag: "T-101",
+    name: "Receiving pit",
+    service: "Raw feed, 100 t per batch",
+    unit: "PS-01",
+    type: "RC pit 8.0 × 5.0 m + dry gallery 8.0 × 3.5 m",
+    status: "CURRENT Rev.2",
+    dimStatus: "verified",
+    source: "PS01-DB Rev.2",
+    notes: "Weir 1.40 m. Mean floor EL −3.30. Gallery floor EL −3.80.",
+    pos: [0, 0, 0],
+    kind: "pit",
+  },
+  {
+    tag: "TK-901",
+    name: "Effluent cool-down and oil skim",
+    service: "Below-grade separator, about 80 m³",
+    unit: "Effluent",
+    type: "RC tank, two compartments, covered",
+    status: "CURRENT",
+    dimStatus: "approximate",
+    source: "PID Sheet 14; GA plot 12 × 7 m",
+    notes: "Comp. 1 ≈55 m³ oil skim. Comp. 2 ≈25 m³ clear water. Depth is not given; the cut is schematic.",
+    pos: [11, 0, 16],
+    kind: "effluent",
+  },
+  {
+    tag: "T-201",
+    name: "Heated settling tank 1",
+    service: "108 t at 80 °C",
+    unit: "PS-02",
+    type: "Vertical cone-bottom, insulated, 8 legs",
+    diameter: 7,
+    height: 7.5,
+    volume: 144,
+    emptyWt: 11.2,
+    status: "CURRENT",
+    dimStatus: "approximate",
+    source: "PS02-DB Rev P1",
+    notes: "Click opens the shell. Water 1.81 m and oil NLL 4.39 m above the cone tip. Sheet 05.",
+    pos: [22, 0, -14],
+    kind: "settling",
+  },
+  {
+    tag: "T-202",
+    name: "Heated settling tank 2",
+    service: "108 t at 80 °C",
+    unit: "PS-02",
+    type: "Vertical cone-bottom, insulated, 8 legs",
+    diameter: 7,
+    height: 7.5,
+    volume: 144,
+    emptyWt: 11.2,
+    status: "CURRENT",
+    dimStatus: "approximate",
+    source: "PS02-DB Rev P1",
+    pos: [22, 0, -5],
+    kind: "settling",
+  },
+  {
+    tag: "T-203",
+    name: "Heated settling tank 3",
+    service: "108 t at 80 °C",
+    unit: "PS-02",
+    type: "Vertical cone-bottom, insulated, 8 legs",
+    diameter: 7,
+    height: 7.5,
+    volume: 144,
+    emptyWt: 11.2,
+    status: "CURRENT",
+    dimStatus: "approximate",
+    source: "PS02-DB Rev P1",
+    pos: [22, 0, 5],
+    kind: "settling",
+  },
+  {
+    tag: "T-204",
+    name: "Heated settling tank 4",
+    service: "108 t at 80 °C",
+    unit: "PS-02",
+    type: "Vertical cone-bottom, insulated, 8 legs",
+    diameter: 7,
+    height: 7.5,
+    volume: 144,
+    emptyWt: 11.2,
+    status: "CURRENT",
+    dimStatus: "approximate",
+    source: "PS02-DB Rev P1",
+    pos: [22, 0, 14],
+    kind: "settling",
+  },
+  {
+    tag: "V-301",
+    name: "Main separator",
+    service: "Vacuum separator, 90 °C bulk",
+    unit: "PS-03",
+    type: "Vertical, cone bottom, F&D top head",
+    diameter: 5.294,
+    height: 12.32,
+    volume: 198,
+    emptyWt: 46,
+    status: "FROZEN",
+    dimStatus: "verified",
+    source: "PS03-DB Rev P18",
+    notes: "Click opens the shell: trays T-1 to T-6, flash box and demister per LAY-001 Rev P5. Crown EL +12.317.",
+    pos: [52, 0, 0],
+    kind: "separator",
+  },
+  {
+    tag: "TK-601",
+    name: "Product storage A",
+    service: "200 t blended product",
+    unit: "PS-06",
+    type: "Atmospheric, flat bottom, cone roof",
+    diameter: 6.4,
+    height: 8.3,
+    volume: 267,
+    emptyWt: 12.6,
+    status: "FROZEN",
+    dimStatus: "verified",
+    source: "PFD Sheet 2, closed 16-Oct-2026",
+    pos: [82, 0, -9],
+    kind: "tank",
+  },
+  {
+    tag: "TK-602",
+    name: "Product storage B",
+    service: "200 t blended product",
+    unit: "PS-06",
+    type: "Atmospheric, flat bottom, cone roof",
+    diameter: 6.4,
+    height: 8.3,
+    volume: 267,
+    emptyWt: 12.6,
+    status: "FROZEN",
+    dimStatus: "verified",
+    source: "PFD Sheet 2, closed 16-Oct-2026",
+    pos: [82, 0, 9],
+    kind: "tank",
+  },
+  {
+    tag: "TK-801",
+    name: "Diesel bulk tank",
+    service: "Diesel / solar, about 2 days",
+    unit: "Utilities",
+    type: "Atmospheric cone roof, bunded",
+    diameter: 3.6,
+    height: 5,
+    volume: 51,
+    emptyWt: 4.2,
+    status: "CURRENT",
+    dimStatus: "assumed",
+    source: "PFD Sheet 2 utilities",
+    pos: [62, 0, 24],
+    kind: "tank",
+  },
+];
+
+export const VIEWS = {
+  overview: {
+    label: "PS-01 overview",
+    sub: "Reception & dry pump gallery",
+    pos: [16, 14, 20] as const,
+    target: [1, -0.4, 1.5] as const,
+  },
+  reception: {
+    label: "Tanker reception",
+    sub: "Unloading apron & receiving pit",
+    pos: [12, 6.2, 4] as const,
+    target: [-3, 1.6, -8] as const,
+  },
+  gallery: {
+    label: "Pump gallery",
+    sub: "Six pumps · level −3.80 m",
+    pos: [7, 3.2, 14] as const,
+    target: [0, -0.6, 4.2] as const,
+  },
+  site: {
+    label: "Entire site",
+    sub: "Preliminary site arrangement",
+    pos: [28, 36, 78] as const,
+    target: [40, 2, 2] as const,
+  },
+  ps03: {
+    label: "PS-03 exterior",
+    sub: "V-301 in unified site GA",
+    pos: [70, 12, 16] as const,
+    target: [52, 6, 0] as const,
+  },
+  ps03Internals: {
+    label: "V-301 internals",
+    sub: "Six trays · flash box · demister",
+    pos: [52, 7.4, 16] as const,
+    target: [52, 7.4, 0] as const,
+  },
+  ps03Films: {
+    label: "V-301 film paths",
+    sub: "Static illustration, not simulation",
+    pos: [52, 10.4, 13] as const,
+    target: [52, 9.4, 0] as const,
+  },
+};
+
+export type ViewId = keyof typeof VIEWS;

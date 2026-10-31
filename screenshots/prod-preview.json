@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SEVERO WM OIL",
+      "hasCanvas": false,
+      "bodyTextLen": 93,
+      "bodyTextHash": "ac2f8aff4916ca402aa16b64e96beb612d045d81ba1ab8573a560dfaabcd4262",
+      "bodyTextPrefix": "SEVERO WM OIL Loading the plant Waste marine oil to cement-kiln ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SEVERO WM OIL",
+      "hasCanvas": false,
+      "bodyTextLen": 93,
+      "bodyTextHash": "ac2f8aff4916ca402aa16b64e96beb612d045d81ba1ab8573a560dfaabcd4262",
+      "bodyTextPrefix": "SEVERO WM OIL Loading the plant Waste marine oil to cement-kiln ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/prod-preview.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
